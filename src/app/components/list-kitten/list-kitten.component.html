@@ -1,3 +1,23 @@
-<p>
-  list-kitten works!
-</p>
+<div class="columns">
+  <div class="column">
+    <section *ngFor="let kitten of listKitten">
+
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="{{ kitten.selfie }}" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <p>Kitten Name: {{ kitten.name }} </p>
+            <p>Kitten Race: {{ kitten.race }} </p>
+            <p>Kitten Born Date: {{ kitten.date }} </p>
+            <a class="button is-normal">Adopt me!</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>

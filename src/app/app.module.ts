@@ -8,6 +8,10 @@ import { ListKittenComponent } from './components/list-kitten/list-kitten.compon
 import { UserKittenComponent } from './components/user-kitten/user-kitten.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateComponent } from './pages/create/create.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TransmissionFormService } from './services/transmission-form.service';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,16 @@ import { CreateComponent } from './pages/create/create.component';
     ListKittenComponent,
     UserKittenComponent,
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [TransmissionFormService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

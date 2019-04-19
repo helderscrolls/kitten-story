@@ -1,3 +1,73 @@
-<p>
-  create-kitten works!
-</p>
+<form [formGroup]="kittenForm">
+  <section class="card">
+    <div class="field">
+      <label class="label">Kitten Name</label>
+      <div class="field">
+        <input formControlName="name" class="form-control input" type="text" placeholder="How is your kitten named?"
+          required>
+        <div
+          *ngIf="!kittenForm.controls.name.valid && (kittenForm.controls.name.dirty || kittenForm.controls.name.touched)"
+          class="alert alert-danger">
+
+          <div *ngIf="!kittenForm.controls.name.valid">
+            Kitten Name is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Kitten Race</label>
+      <div class="control">
+        <input formControlName="race" class="input" type="text" placeholder="Type the race of your cat" value=""
+          required />
+        <div
+          *ngIf="!kittenForm.controls.race.valid && (kittenForm.controls.race.dirty || kittenForm.controls.race.touched)"
+          class="alert alert-danger">
+
+          <div *ngIf="!kittenForm.controls.race.valid">
+            Kitten Race is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Kitten Born Date</label>
+      <div class="control">
+        <input formControlName="date" class="input" type="text" placeholder="When was your kitten born?" value=""
+          required />
+        <div
+          *ngIf="!kittenForm.controls.date.valid && (kittenForm.controls.date.dirty || kittenForm.controls.date.touched)"
+          class="alert alert-danger">
+
+          <div *ngIf="!kittenForm.controls.date.valid">
+            Born date is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Kitten Selfie</label>
+      <div class="control">
+        <input formControlName="selfie" class="input" type="text" placeholder="Share some selfies with us!" value=""
+          required />
+        <div
+          *ngIf="!kittenForm.controls.selfie.valid && (kittenForm.controls.selfie.dirty || kittenForm.controls.selfie.touched)"
+          class="alert alert-danger">
+
+          <div *ngIf="!kittenForm.controls.selfie.valid">
+            A Selfie Url is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-grouped buttonDisplay">
+      <div class="control">
+        <button class="button is-link" (click)="onSubmit()" [disabled]="!kittenForm.valid">Submit</button>
+      </div>
+    </div>
+  </section>
+</form>
