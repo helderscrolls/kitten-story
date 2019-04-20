@@ -1,8 +1,13 @@
 .card {
-  width: 25%;
   margin: 3vh;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .content {
   text-align: center;
 }
+
