@@ -1,11 +1,10 @@
 aside {
 	align-items: center;
-	background: #eaeaea;
+	background: red;
 	display: flex;
 	justify-content: center;
   width: 20%;
-  position: absolute;
-  right: 0;
-  top: 210px;
-  height: 50vh;
+  margin-left: auto;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 352px);
  }
