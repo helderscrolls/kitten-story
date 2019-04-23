@@ -1,19 +1,19 @@
 <div class="columns container">
   <div class="column">
-    <section *ngFor="let kitten of listKitten">
+    <section *ngFor="let kitten of listKitten; let i = index">
 
       <div class="card">
-        <div class="card-image">
+        <div class="card-image kittenImage">
           <figure class="image is-4by3">
-            <img src="{{ kitten.selfie }}" alt="Placeholder image">
+            <img clkass="kittenImage" src="{{ kitten.selfie }}" alt="Placeholder image">
           </figure>
         </div>
         <div class="card-content">
-          <div class="content">
+          <div class="content kittenContentHidden">
             <p>Kitten Name: {{ kitten.name }} </p>
             <p>Kitten Race: {{ kitten.race }} </p>
             <p>Kitten Born Date: {{ kitten.date }} </p>
-            <a class="button is-normal" (click)="adoptMe()">Adopt me!</a>
+            <a class="button is-normal" (click)="adoptkitten(kitten, i)">Adopt me!</a>
           </div>
         </div>
       </div>

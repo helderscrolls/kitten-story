@@ -12,16 +12,17 @@ export class CreateKittenComponent implements OnInit {
   kittenForm: FormGroup;
 
   constructor(
-    private _transmissionForm: TransmissionFormService,
+    private transmissionFormService: TransmissionFormService,
     private fb: FormBuilder,
   ) { }
 
   ngOnInit() {
     this.initForm();
-    console.log(this.kittenForm);
-
   }
 
+  /*
+    Function to start new form
+  */
   initForm() {
     this.kittenForm = this.fb.group({
       name: new FormControl('', [Validators.required]),
@@ -31,7 +32,10 @@ export class CreateKittenComponent implements OnInit {
     });
   }
 
+  /*
+    Function to send the form data into the array (onclick)
+  */
   onSubmit() {
-    this._transmissionForm.addKitten(this.kittenForm.value);
+    this.transmissionFormService.addKitten(this.kittenForm.value);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MyKittensService } from 'src/app/services/my-kittens.service';
+import { TransmissionFormService } from 'src/app/services/transmission-form.service';
 
 @Component({
   selector: 'app-user-kitten',
@@ -8,12 +8,15 @@ import { MyKittensService } from 'src/app/services/my-kittens.service';
 })
 export class UserKittenComponent implements OnInit {
 
-  listKitten = [];
+  myKittensList = [];
 
-  constructor(private _myKittensList: MyKittensService) { }
+  constructor(private transmissionFormList: TransmissionFormService) { }
 
+  /*
+    Recover data from service to generate the card on My Kittens
+  */
   ngOnInit() {
-    this.listKitten = this._myKittensList.myKittens;
+    this.myKittensList = this.transmissionFormList.myKittensList;
   }
 
 }

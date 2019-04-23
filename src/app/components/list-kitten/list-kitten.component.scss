@@ -1,5 +1,20 @@
 .card {
   margin: 3vh;
+
+  .card-content {
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease-in-out 0.4s;
+  }
+
+  &:hover {
+    .card-content {
+      padding: 24px;
+      max-height: 200px;
+      transition: all ease-in-out 0.4s;
+    }
+  }
 }
 
 .column {
@@ -10,4 +25,3 @@
 .content {
   text-align: center;
 }
-

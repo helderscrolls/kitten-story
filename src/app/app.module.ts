@@ -12,7 +12,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TransmissionFormService } from './services/transmission-form.service';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MyKittensService } from './services/my-kittens.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,7 @@ import { MyKittensService } from './services/my-kittens.service';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [TransmissionFormService, MyKittensService,],
+  providers: [TransmissionFormService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
